@@ -1,0 +1,9 @@
+{
+  "secretkey":  "SuperSecretKeyVanCasEnMax",
+  "webPort": "3000",
+  "dbHost": "146.185.130.82",
+  "dbUsername": "1057",
+  "dbPassword": "secret",
+  "dbDatabase": "1057",
+  "dbDatabaseUser": "1057"
+}
