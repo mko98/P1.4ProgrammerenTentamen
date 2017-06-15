@@ -10,7 +10,7 @@ const jwt = require('jwt-simple');
 //
 function encodeToken(username) {
     const playload = {
-        exp: moment().add(1, 'minutes').unix(),
+        exp: moment().add(60, 'minutes').unix(),
         iat: moment().unix(),
         sub: username
     };
