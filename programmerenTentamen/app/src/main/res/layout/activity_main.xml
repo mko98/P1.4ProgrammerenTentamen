@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="com.example.max.programmerententamen.presentation.presentation.MainActivity">
+    tools:context=".presentation.MainActivity">
 
     <TextView
         android:id="@+id/MoviesTextView"
