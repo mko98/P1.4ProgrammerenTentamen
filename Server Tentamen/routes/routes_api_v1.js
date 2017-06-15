@@ -100,6 +100,178 @@ router.post('/register', function(req, res) {
     };
 });
 
+router.get('/films?offset=:start&count=:number', function(request, response) {
+    var offset = request.params.body;
+    var count = request.params.count;
+    var query_str = {
+        sql: query_str = 'SELECT * FROM film ORDER BY title LIMIT ' + count + ',' + offset + ';',
+        values: [],
+        timeout: 2000
+    }
+    console.log('Query: ' + query_str.sql + query_str.values + "\n");
 
+    response.contentType('application/json');
+
+    pool.getConnection(function (error, connection) {
+        if (error) {
+            throw error
+        }
+        connection.query(query_str, function (error, rows, fields) {
+            connection.release();
+            if (error) {
+                throw error
+            }
+            response.status(200).json(rows);
+        });
+    });
+});
+
+router.get('/cities/:filmid?', function(request, response, next) {
+    var filmid = request.params.filmid;
+    var query_str;
+
+    if (filmid > 0) {
+        query_str = 'SELECT * FROM `1069`.film WHERE film_id = "' + filmid + '";';
+
+        pool.getConnection(function (error, connection) {
+            if (error) {
+                throw error
+            }
+            connection.query(query_str, function (error, rows, fields) {
+                connection.release();
+                if (error) {
+                    throw error
+                }
+                response.status(200).json(rows);
+            });
+        });
+    } else {
+        next();
+        return;
+    }
+});
+
+
+router.get('/rentals/:userid', function(request, response, next) {
+    var userid = request.params.userid;
+    var query_str;
+
+    if (userid > 0) {
+        query_str = 'SELECT title from film' +
+        'INNER JOIN inventory ON film.film_id=inventory.film_id' +
+        'INNER JOIN rental ON inventory.inventory_id=rental.inventory_id'+
+        'INNER JOIN customer ON rental.customer_id=customer.customer_id' +
+        'WHERE customer.customer_id = ' + userid + ';';
+
+        pool.getConnection(function (error, connection) {
+            if (error) {
+                throw error
+            }
+            connection.query(query_str, function (error, rows, fields) {
+                connection.release();
+                if (error) {
+                    throw error
+                }
+                response.status(200).json(rows);
+            });
+        });
+    } else {
+        next();
+        return;
+    }
+});
+
+router.post('/rentals/:userid/:inventoryid', function(request, response) {
+    console.log('test.');
+    var userid = request.params.body;
+    var inventoryid = request.params.inventoryid;
+    console.log(coutry.name);
+    var query_str = {
+        sql: 'INSERT INTO `rental` (' + userid + ', '+ inventoryid + ') VALUES (?, ?)',
+        values : [ rental.customer_id, rental.inventory_id],
+        timeout : 2000 // 2secs
+    };
+
+    console.dir(coutry);
+    console.log('Query: ' + query_str.sql + "\n" + query_str.values);
+
+    response.contentType('application/json');
+
+    pool.getConnection(function (error, connection) {
+        if (error) {
+            throw error
+        }
+        connection.query(query_str, function (error, rows, fields) {
+            connection.release();
+            if (error) {
+                throw error
+            }
+            response.status(200).json(rows);
+        });
+    });
+});
+
+router.put('/rentals/:userid/:inventoryid', function(request, response) {
+
+    var userid = request.params.body;
+    var inventoryid = request.params.inventoryid;
+    var query_str = {
+        sql: 'UPDATE rental' +
+        'INNER JOIN customer' +
+        'ON rental.customer_id=customer.customer_id' +
+        'SET rental.inventory_id = ' + inventoryid + ''  +
+        'WHERE customer.customer_id = ' + userid + ' AND rental.inventory_id = 1',
+        values : [ userid, inventoryid ],
+        timeout : 2000
+    };
+
+    console.log('Query: ' + query_str.sql + "\n" + query_str.values + "\n");
+
+    response.contentType('application/json');
+
+    pool.getConnection(function (error, connection) {
+        if (error) {
+            throw error
+        }
+        connection.query(query_str, function (error, rows, fields) {
+            connection.release();
+            if (error) {
+                throw error
+            }
+            response.status(200).json(rows);
+        });
+    });
+});
+
+router.delete('/rentals/:userid/:inventoryid ', function(request, response) {
+
+    var userid = request.params.body;
+    var inventoryid = request.params.inventoryid;
+    var query_str = {
+        sql: 'DELETE `1069`.rental FROM rental ' +
+        'INNER JOIN inventory ON rental.inventory_id=inventory.inventory_id ' +
+        'INNER JOIN customer ON rental.customer_id=customer.customer_id ' +
+        'WHERE customer.customer_id = ' + userid + ' & inventory.inventory_id = ' + inventoryid + '',
+        values : [ userid, inventoryid ],
+        timeout : 2000
+    };
+
+    console.log('Query: ' + query_str.sql) + "\n" + query_str.values;
+
+    response.contentType('application/json');
+
+    pool.getConnection(function (error, connection) {
+        if (error) {
+            throw error
+        }
+        connection.query(query_str, function (error, rows, fields) {
+            connection.release();
+            if (error) {
+                throw error
+            }
+            response.status(200).json(rows);
+        });
+    });
+});
 
 module.exports = router;
