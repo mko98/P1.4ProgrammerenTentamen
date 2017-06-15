@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="com.example.max.programmerententamen.presentation.MainActivity">
+    tools:context="com.example.max.programmerententamen.presentation.presentation.MainActivity">
 
     <TextView
-        android:id="@+id/MoviesTV"
+        android:id="@+id/MoviesTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -27,7 +27,7 @@
         android:layout_marginTop="8dp" />
 
     <ListView
-        android:id="@+id/FilmsLV"
+        android:id="@+id/FilmsListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MoviesTV"
+        app:layout_constraintTop_toBottomOf="@+id/MoviesTextView"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

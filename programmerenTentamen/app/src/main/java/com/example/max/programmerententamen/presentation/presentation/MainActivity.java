@@ -1,15 +1,15 @@
-package com.example.max.programmerententamen.presentation;
+package com.example.max.programmerententamen.presentation.presentation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.max.programmerententamen.R;
 
-public class RegisterActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_main);
     }
 }
