@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c768a375-1da3-4655-9b40-7de8ed3c25fd" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/routes_api_v1.js" afterPath="$PROJECT_DIR$/routes/routes_api_v1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/routes_api_v1.js" afterPath="$PROJECT_DIR$/routes/routes_api_v1.js" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +23,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+<<<<<<< HEAD
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+=======
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
               <folding />
             </state>
           </provider>
@@ -31,18 +44,30 @@
       <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="10489">
+=======
+            <state relative-caret-position="10387">
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
               <caret line="617" column="23" lean-forward="false" selection-start-line="617" selection-start-column="23" selection-end-line="617" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="routes_api_v1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes_api_v1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+=======
+      <file leaf-file-name="routes_api_v1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/routes_api_v1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2703">
+              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="174" selection-end-column="3" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
               <folding />
             </state>
           </provider>
@@ -61,8 +86,13 @@
       <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.json">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="119">
               <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+=======
+            <state relative-caret-position="136">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
               <folding />
             </state>
           </provider>
@@ -71,8 +101,13 @@
       <file leaf-file-name="authentication.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth/authentication.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="170">
               <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+=======
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
               <folding />
             </state>
           </provider>
@@ -132,7 +167,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -154,6 +189,10 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,7 +249,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,12 +367,19 @@
       <workItem from="1497554129976" duration="1205000" />
       <workItem from="1497623202244" duration="2962000" />
       <workItem from="1497634922899" duration="286000" />
+<<<<<<< HEAD
       <workItem from="1497636283940" duration="442000" />
+=======
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="10801000" />
+=======
+    <option name="totallyTimeSpent" value="10359000" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -342,12 +391,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3305174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12592202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33152762" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -667,7 +726,11 @@
     <entry file="file://$PROJECT_DIR$/routes/routes_api_v2.js" />
     <entry file="file://$PROJECT_DIR$/db/db_connector2.js" />
     <entry file="file://$PROJECT_DIR$/routes_api_v1.js" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
+=======
+    <entry file="file://$PROJECT_DIR$/auth/authentication.js">
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10489">
           <caret line="617" column="23" lean-forward="false" selection-start-line="617" selection-start-column="23" selection-end-line="617" selection-end-column="23" />
@@ -675,34 +738,66 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+=======
+    <entry file="file://$PROJECT_DIR$/db/db_connector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="306">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+=======
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10387">
+          <caret line="617" column="23" lean-forward="false" selection-start-line="617" selection-start-column="23" selection-end-line="617" selection-end-column="23" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="170">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+=======
         <state relative-caret-position="306">
           <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/routes/routes_api_v1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        <state relative-caret-position="2703">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="174" selection-end-column="3" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
           <folding />
         </state>
       </provider>
@@ -717,8 +812,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes_api_v1.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+=======
+        <state relative-caret-position="765">
+          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+>>>>>>> 711e3f8c2b5b4d209597ea5276b7c5265e282287
           <folding />
         </state>
       </provider>
