@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.RegisterActivity">
+    android:background="@android:color/background_light"
+    tools:context="com.example.max.programmerententamen.presentation.RegisterActivity">
 
     <EditText
         android:id="@+id/usernameRegisterEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="56dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Gebruikersnaam"
         android:inputType="textPersonName"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <EditText
         android:id="@+id/passwordRegisterEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="35dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Wachtwoord"
         android:inputType="textPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -43,11 +44,12 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Inloggen"
+        android:layout_marginTop="144dp"
+        android:text="Registreren"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordRegisterEditText"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.029" />
+
 </android.support.constraint.ConstraintLayout>

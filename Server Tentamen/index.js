@@ -1,6 +1,3 @@
-/**
- * Created by Max on 13-6-2017.
- */
 var express = require('express');
 var bodyParser = require('body-parser')
 var logger = require('morgan');
@@ -24,11 +21,11 @@ app.use('/api/v1', require('./routes/routes_api_v1'));
 app.set('PORT', config.webPort);
 
 app.get('/info', function(request, response) {
-    response.send('Practicum 3 Application :D');
+    response.send('Server tentamen Programmeren 4');
 })
 
 app.get('/about', function(request, response) {
-    response.send('Written by Maikel and Cas');
+    response.send('Door: Max koning en Cas de Pender');
 })
 
 app.all('*', function(request, response) {
@@ -39,8 +36,11 @@ app.all('*', function(request, response) {
 // server starten
 var port = process.env.PORT || app.get('PORT');
 
+
+
 app.listen(port, function() {
     console.log('Server app is listening on port ' + port);
 })
+
 
 module.exports = app;
