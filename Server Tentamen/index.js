@@ -36,8 +36,11 @@ app.all('*', function(request, response) {
 // server starten
 var port = process.env.PORT || app.get('PORT');
 
+
+
 app.listen(port, function() {
-    console.log('De Server app runt op poort: ' + port);
+    console.log('Server app is listening on port ' + port);
 })
+
 
 module.exports = app;
