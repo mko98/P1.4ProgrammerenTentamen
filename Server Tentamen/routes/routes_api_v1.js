@@ -97,7 +97,7 @@ router.post('/register', function(req, res) {
     };
 });
 
-router.get('/films/number=:number&count=:count', function(request, response) {
+router.get('/films/:number&:count', function(request, response) {
     var count = request.params.count;
     var number = request.params.number;
     var query_str = {
@@ -148,7 +148,6 @@ router.get('/films/:filmid?', function(request, response, next) {
     }
 });
 
-
 router.get('/rentals/:userid', function(request, response, next) {
     var userid = request.params.userid;
     var query_str;
@@ -174,15 +173,14 @@ router.get('/rentals/:userid', function(request, response, next) {
     }
 });
 
-router.post('/rentals/:userid/:inventoryid', function(request, response) {
-    console.log('test.');
-    var userid = request.params.body;
-    var inventoryid = request.params.inventoryid;
-    console.log(rental.user_id);
+router.post('/rentals/:customer_id/:inventory_id', function(request, response) {
+    console.log('test rental.');
+    var rental = request.body;
+    console.log(rental.inventory_id);
     var query_str = {
-        sql: 'INSERT INTO `rental` (' + userid + ', '+ inventoryid + ') VALUES (?, ?)',
-        values : [ rental.customer_id, rental.inventory_id],
-        timeout : 2000 // 2secs
+        sql: 'INSERT INTO `rental` (customer_id, inventory_id) VALUES (?, ?)',
+        values : [rental.customer_id, rental.inventory_id],
+        timeout : 20000 // 2secs
     };
 
     console.dir(rental);
@@ -204,17 +202,15 @@ router.post('/rentals/:userid/:inventoryid', function(request, response) {
     });
 });
 
-router.put('/rentals/:userid/:inventoryid', function(request, response) {
+router.put('/rentals/:inventory_id', function(request, response) {
 
-    var userid = request.params.body;
-    var inventoryid = request.params.inventoryid;
+    var rental = request.body;
+    var inventory_id = request.body;
     var query_str = {
-        sql: 'UPDATE rental' +
-        'INNER JOIN customer' +
-        'ON rental.customer_id=customer.customer_id' +
-        'SET rental.inventory_id = ' + inventoryid + ''  +
-        'WHERE customer.customer_id = ' + userid + ' AND rental.inventory_id = 1',
-        values : [ userid, inventoryid ],
+        sql:
+        // 'UPDATE `country` SET name=? WHERE code=?',
+            'UPDATE rental SET inventory_id=? WHERE inventory_id =1 AND customer_id=?',
+        values : [ rental.customer_id, rental.inventory_id ],
         timeout : 2000
     };
 
@@ -236,35 +232,29 @@ router.put('/rentals/:userid/:inventoryid', function(request, response) {
     });
 });
 
-router.delete('/rentals/:userid/:inventoryid ', function(request, response) {
 
-    var userid = request.params.body;
-    var inventoryid = request.params.inventoryid;
-    var query_str = {
-        sql: 'DELETE `1069`.rental FROM rental ' +
-        'INNER JOIN inventory ON rental.inventory_id=inventory.inventory_id ' +
-        'INNER JOIN customer ON rental.customer_id=customer.customer_id ' +
-        'WHERE customer.customer_id = ' + userid + ' & inventory.inventory_id = ' + inventoryid + '',
-        values : [ userid, inventoryid ],
-        timeout : 2000
-    };
+router.delete('/rentals/:customer_id', function(request, response, next) {
+    var customer_id = request.params.customer_id;
+    var query_str;
 
-    console.log('Query: ' + query_str.sql) + "\n" + query_str.values;
-
-    response.contentType('application/json');
-
-    pool.getConnection(function (error, connection) {
-        if (error) {
-            throw error
-        }
-        connection.query(query_str, function (error, rows, fields) {
-            connection.release();
+    if (customer_id > 0) {
+        query_str = 'DELETE FROM rental WHERE customer_id=' + customer_id +''
+        pool.getConnection(function (error, connection) {
             if (error) {
                 throw error
             }
-            response.status(200).json(rows);
+            connection.query(query_str, function (error, rows, fields) {
+                connection.release();
+                if (error) {
+                    throw error
+                }
+                response.status(200).json(rows);
+            });
         });
-    });
+    } else {
+        next();
+        return;
+    }
 });
 
 module.exports = router;

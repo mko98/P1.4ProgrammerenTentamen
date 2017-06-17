@@ -36,8 +36,6 @@ app.all('*', function(request, response) {
 // server starten
 var port = process.env.PORT || app.get('PORT');
 
-
-
 app.listen(port, function() {
     console.log('Server app is listening on port ' + port);
 })
