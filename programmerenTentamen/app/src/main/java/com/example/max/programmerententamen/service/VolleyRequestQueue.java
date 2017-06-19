@@ -1,9 +1,5 @@
 package com.example.max.programmerententamen.service;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 import android.content.Context;
 
 import com.android.volley.Cache;
@@ -20,12 +16,8 @@ public class VolleyRequestQueue {
     private RequestQueue mRequestQueue;
     private static Context mCtx;
 
-    /**
-     * private constructor - kan niet van 'buiten af' worden aangeroepen
-     * Deze constructie hoort bij het Singleton pattern.
-     *
-     * @param context
-     */
+     //@param context
+
     private VolleyRequestQueue(Context context) {
         mCtx = context;
         mRequestQueue = getRequestQueue();

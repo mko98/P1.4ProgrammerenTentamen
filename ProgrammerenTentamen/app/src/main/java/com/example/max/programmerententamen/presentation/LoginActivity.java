@@ -1,8 +1,5 @@
 package com.example.max.programmerententamen.presentation;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
 
 import android.content.Context;
 import android.content.Intent;

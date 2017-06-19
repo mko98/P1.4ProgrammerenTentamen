@@ -14,10 +14,6 @@ import com.example.max.programmerententamen.R;
 import com.example.max.programmerententamen.domain.Film;
 import com.example.max.programmerententamen.service.FilmRequest;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 public class DetailActivity extends AppCompatActivity {
 
 //    public final String TAG = this.getClass().getSimpleName();

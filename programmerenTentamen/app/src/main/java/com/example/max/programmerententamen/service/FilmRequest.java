@@ -1,9 +1,5 @@
 package com.example.max.programmerententamen.service;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -445,7 +441,6 @@ public class FilmRequest {
         // Callback to handle serverside API errors
         void onCitiesError(String message);
     }
-
 }
 
 

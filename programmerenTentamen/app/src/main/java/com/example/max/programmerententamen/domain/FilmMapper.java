@@ -8,10 +8,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 public class FilmMapper {
 
     public static final String CITY_ID = "ID";

@@ -10,10 +10,6 @@ import android.widget.EditText;
 import com.example.max.programmerententamen.R;
 import com.example.max.programmerententamen.service.FilmRequest;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 public class RegisterActivity  extends AppCompatActivity {
 
     public final String TAG = this.getClass().getSimpleName();
@@ -41,7 +37,6 @@ public class RegisterActivity  extends AppCompatActivity {
                     }
                 }
             });
-
         }
 
     private void registerUser(String username, String password){

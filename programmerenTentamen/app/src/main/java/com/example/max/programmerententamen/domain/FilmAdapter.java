@@ -1,9 +1,5 @@
 package com.example.max.programmerententamen.domain;
 
-/**
- * Created by Maikel on 1-6-2017.
- */
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +29,5 @@ public class FilmAdapter extends ArrayAdapter<Film> {
         name.setText(film.getName());
 
         return convertview;
-
-
     }
 }
