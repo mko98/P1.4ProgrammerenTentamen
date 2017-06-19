@@ -9,16 +9,17 @@ public class Film implements Serializable {
     private int inventoryID;
     private int filmID;
 
-
-    public Film(String name, int customerID, int inventoryID, int filmID) {
-        this.name = name;
-        this.customerID = customerID;
-        this.inventoryID = inventoryID;
-        this.filmID = filmID;
-    }
+//
+//    public Film(String name, int customerID, int inventoryID, int filmID) {
+//        this.name = name;
+//        this.customerID = customerID;
+//        this.inventoryID = inventoryID;
+//        this.filmID = filmID;
+//    }
 
     public Film(String name){
         this.name = name;
+
     }
 
     public String getName() {

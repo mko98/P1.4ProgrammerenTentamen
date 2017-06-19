@@ -28,14 +28,13 @@ public class FilmMapper {
                 JSONObject jsonObject = response.getJSONObject(i);
 
                 Film film = new Film(
-
+//                        jsonObject.getInt(rental_ID),
                         jsonObject.getString(FILM_TITLE)
+//                        jsonObject.getInt(CUSTOMER_ID)
+//                        jsonObject.getInt(INVENTORY_ID),
+//                        jsonObject.getInt(FILM_ID)
 
                 );
-
-
-
-
                 result.add(film);
             }
         } catch( JSONException ex) {
