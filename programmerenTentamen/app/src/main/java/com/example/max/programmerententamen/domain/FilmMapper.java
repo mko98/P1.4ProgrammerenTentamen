@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 public class FilmMapper {
 
-    public static final String rental_ID = "ID";
-    public static final String rental_NAME = "title";
-    public static final String rental_COUNTRYCODE = "CountryCode";
-    public static final String rental_DISTRICT = "District";
-    public static final String rental_POPULATION = "Population";
+
+    public static final String FILM_TITLE = "title";
+    public static final String CUSTOMER_ID = "customer_id";
+    public static final String INVENTORY_ID = "inventory_id";
+    public static final String FILM_ID = "film_id";
+
 
     public static ArrayList<Film> rentalList(JSONArray response){
 
@@ -28,7 +29,10 @@ public class FilmMapper {
 
                 Film film = new Film(
 //                        jsonObject.getInt(rental_ID),
-                        jsonObject.getString(rental_NAME)
+                        jsonObject.getString(FILM_TITLE),
+                        jsonObject.getInt(CUSTOMER_ID),
+                        jsonObject.getInt(INVENTORY_ID),
+                        jsonObject.getInt(FILM_ID)
 
                 );
                 result.add(film);
