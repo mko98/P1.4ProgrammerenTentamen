@@ -21,13 +21,13 @@ import com.example.max.programmerententamen.domain.Film;
 import com.example.max.programmerententamen.domain.FilmAdapter;
 import com.example.max.programmerententamen.service.FilmRequest;
 
-public class MainActivity extends AppCompatActivity implements FilmRequest.CityListener {
+public class MainActivity extends AppCompatActivity implements FilmRequest.rentalListener {
 
     // Logging tag
     public final String TAG = this.getClass().getSimpleName();
 
     // The name for communicating Intents extras
-    public final static String CITY_DATA = "title";
+    public final static String rental_DATA = "title";
 
     // A request code for returning data from Intent - is supposed to be unique.
     public static final int MY_REQUEST_CODE = 1234;
@@ -63,21 +63,21 @@ public class MainActivity extends AppCompatActivity implements FilmRequest.CityL
             filmAdapter = new FilmAdapter(getApplicationContext(), films);
             listViewFilms.setAdapter(filmAdapter);
             listViewFilms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                       @Override
-                                       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                           Intent i = new Intent(view.getContext(), DetailActivity.class);
-                                           Film film = films.get(position);
-                                           i.putExtra("Film", (Serializable) film);
-                                           startActivity(i);
-                                       }
-                                   });
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent i = new Intent(view.getContext(), DetailActivity.class);
+                    Film film = films.get(position);
+                    i.putExtra("Film", (Serializable) film);
+                    startActivity(i);
+                }
+            });
             //
             // We hebben een token. Je zou eerst nog kunnen valideren dat het token nog
             // geldig is; dat doen we nu niet.
             // Vul de lijst met ToDos
             //
-            Log.d(TAG, "Token gevonden - Cities ophalen!");
-            getCities();
+            Log.d(TAG, "Token gevonden - rentals ophalen!");
+            getrentals();
         } else {
             //
             // Blijkbaar was er geen token - eerst inloggen dus
@@ -106,11 +106,11 @@ public class MainActivity extends AppCompatActivity implements FilmRequest.CityL
             Log.v( TAG, "onActivityResult OK" );
             if (resultCode == Activity.RESULT_OK )
             {
-                final Film newFilm = (Film) pData.getSerializableExtra(CITY_DATA);
+                final Film newFilm = (Film) pData.getSerializableExtra(rental_DATA);
                 Log.v( TAG, "Retrieved Value newFilm is " + newFilm);
 
                 // We need to save our new Film
-                postCity(newFilm);
+                postrental(newFilm);
             }
         }
 
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements FilmRequest.CityL
     }
 
     @Override
-    public void onCitiesAvailable(ArrayList<Film> filmArrayList) {
+    public void onrentalsAvailable(ArrayList<Film> filmArrayList) {
 
         Log.i(TAG, "We hebben " + filmArrayList.size() + " items in de lijst");
 
@@ -149,13 +149,13 @@ public class MainActivity extends AppCompatActivity implements FilmRequest.CityL
 
 
     @Override
-    public void onCityAvailable(Film film) {
+    public void onrentalAvailable(Film film) {
         films.add(film);
         filmAdapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onCitiesError(String message) {
+    public void onrentalsError(String message) {
         Log.e(TAG, message);
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
@@ -163,17 +163,20 @@ public class MainActivity extends AppCompatActivity implements FilmRequest.CityL
     /**
      * Start the activity to GET all ToDos from the server.
      */
-    private void getCities(){
+    private void getrentals(){
         FilmRequest request = new FilmRequest(getApplicationContext(), this);
-        request.handleGetAllCities();
+        request.handleGetAllrentals();
     }
 
     /**
      * Start the activity to POST a new Film to the server.
      */
-    private void postCity(Film film){
+    private void postrental(Film film){
         FilmRequest request = new FilmRequest(getApplicationContext(), this);
-        request.handlePostCity(film);
+        request.handlePostrental(film);
     }
 
 }
+
+
+

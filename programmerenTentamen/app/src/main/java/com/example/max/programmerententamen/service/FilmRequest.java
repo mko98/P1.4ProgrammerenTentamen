@@ -40,7 +40,7 @@ public class FilmRequest {
     public final String TAG = this.getClass().getSimpleName();
 
     // De aanroepende class implementeert deze interface.
-    private FilmRequest.CityListener listener;
+    private FilmRequest.rentalListener listener;
 
     /**
      * Constructor
@@ -48,7 +48,7 @@ public class FilmRequest {
      * @param context
      * @param listener
      */
-    public FilmRequest(Context context, FilmRequest.CityListener listener) {
+    public FilmRequest(Context context, FilmRequest.rentalListener listener) {
         this.context = context;
         this.listener = listener;
     }
@@ -59,11 +59,11 @@ public class FilmRequest {
     }
 
     /**
-     * Verstuur een GET request om alle cities op te halen.
+     * Verstuur een GET request om alle rentals op te halen.
      */
-    public void handleGetAllCities() {
+    public void handleGetAllrentals() {
 
-        Log.i(TAG, "handleGetAllCities");
+        Log.i(TAG, "handleGetAllrentals");
 
         // Haal het token uit de prefs
         SharedPreferences sharedPref = context.getSharedPreferences(
@@ -74,20 +74,20 @@ public class FilmRequest {
             Log.i(TAG, "Token gevonden, we gaan het request uitvoeren");
 //            JsonObjectRequest jsObjRequest = new JsonObjectRequest(
 //                    Request.Method.GET,
-//                    Constants.URL_CITIES,
+//                    Constants.URL_rentals,
 //                    null,
 //                    new Response.Listener<JSONObject>() {
 //                        @Override
 //                        public void onResponse(JSONObject response) {
 //                            // Succesvol response
 //                            Log.i(TAG, response.toString() + "testetet");
-//                            ArrayList<Film> result = FilmMapper.cityList(response);
-//                            listener.onCitiesAvailable(result);
+//                            ArrayList<Film> result = FilmMapper.rentalList(response);
+//                            listener.onrentalsAvailable(result);
 //                        }
 //                    },
 
 //                    kijken hoe je array ophaalt..
-                    JsonArrayRequest jsArrayRequest = new JsonArrayRequest(
+            JsonArrayRequest jsArrayRequest = new JsonArrayRequest(
                     Request.Method.GET,
                     Constants.URL_FILMS,
                     null,
@@ -96,24 +96,24 @@ public class FilmRequest {
                         public void onResponse(JSONArray response) {
                             // Succesvol response
                             Log.i(TAG, response.toString() + "testetet");
-                            ArrayList<Film> result = FilmMapper.cityList(response);
-                            listener.onCitiesAvailable(result);
+                            ArrayList<Film> result = FilmMapper.rentalList(response);
+                            listener.onrentalsAvailable(result);
                         }
                     },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
 
-                                SharedPreferences sharedPref = context.getSharedPreferences(
-                                        context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.remove("token");
-                                Intent i = new Intent(context, LoginActivity.class);
-                                Log.i("token expired", "Log opnieuw in");
+                            SharedPreferences sharedPref = context.getSharedPreferences(
+                                    context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.remove("token");
+                            Intent i = new Intent(context, LoginActivity.class);
+                            Log.i("token expired", "Log opnieuw in");
                             Toast.makeText(context,"Log opnieuw in", Toast.LENGTH_SHORT).show();
 
-                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                context.startActivity(i);
+                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            context.startActivity(i);
 
                             Log.e(TAG, error.toString());
                         }
@@ -135,9 +135,9 @@ public class FilmRequest {
     /**
      * Verstuur een POST met nieuwe Film.
      */
-    public void handlePostCity(final Film newFilm) {
+    public void handlePostrental(final Film newFilm) {
 
-        Log.i(TAG, "handlePostCity");
+        Log.i(TAG, "handlePostrental");
 
         // Haal het token uit de prefs
         // Film Verplaats het ophalen van het token naar een centraal beschikbare 'utility funtion'
@@ -154,7 +154,7 @@ public class FilmRequest {
 
             try {
                 JSONObject jsonBody = new JSONObject(body);
-                Log.i(TAG, "handlePostCity - body = " + jsonBody);
+                Log.i(TAG, "handlePostrental - body = " + jsonBody);
                 JsonObjectRequest jsObjRequest = new JsonObjectRequest(
                         Request.Method.POST,
                         Constants.URL_FILMS,
@@ -167,7 +167,7 @@ public class FilmRequest {
                                 // Hier kun je kiezen: of een refresh door de hele lijst op te halen
                                 // en de ListView bij te werken ... Of alleen de ene update toevoegen
                                 // aan de ArrayList. Wij doen dat laatste.
-                                listener.onCityAvailable(newFilm);
+                                listener.onrentalAvailable(newFilm);
                                 Intent in = new Intent(context, MainActivity.class);
                                 context.startActivity(in);
                                 Log.i(TAG, "toevoegen gelukt");
@@ -177,7 +177,7 @@ public class FilmRequest {
                             @Override
                             public void onErrorResponse(VolleyError error) {
 
-//                                listener.onCitiesError(error.toString());
+//                                listener.onrentalsError(error.toString());
 
 //                                if (error.toString().equals("com.android.volley.AuthFailureError")) {
                                 if (error.networkResponse.statusCode == 401) {
@@ -239,14 +239,14 @@ public class FilmRequest {
                 VolleyRequestQueue.getInstance(context).addToRequestQueue(jsObjRequest);
             } catch (JSONException e) {
                 Log.e(TAG, e.getMessage());
-//                listener.onCitiesError(e.getMessage());
+//                listener.onrentalsError(e.getMessage());
             }
         }
     }
 
-    public void handleEditCity(final Film editFilm) {
+    public void handleEditrental(final Film editFilm) {
 
-        Log.i(TAG, "handleEditCity");
+        Log.i(TAG, "handleEditrental");
 
         // Haal het token uit de prefs
         // Film Verplaats het ophalen van het token naar een centraal beschikbare 'utility funtion'
@@ -259,7 +259,7 @@ public class FilmRequest {
 
             try {
                 JSONObject jsonBody = new JSONObject(body);
-                Log.i(TAG, "handlePostCity - body = " + jsonBody);
+                Log.i(TAG, "handlePostrental - body = " + jsonBody);
                 JsonObjectRequest jsObjRequest = new JsonObjectRequest(
                         Request.Method.PUT,
                         Constants.URL_FILMS + "/" + editFilm.getName(),
@@ -278,7 +278,7 @@ public class FilmRequest {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Error - send back to caller
-//                                listener.onCitiesError(error.toString());
+//                                listener.onrentalsError(error.toString());
                                 SharedPreferences sharedPref = context.getSharedPreferences(
                                         context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
@@ -304,14 +304,14 @@ public class FilmRequest {
                 VolleyRequestQueue.getInstance(context).addToRequestQueue(jsObjRequest);
             } catch (JSONException e) {
                 Log.e(TAG, e.getMessage());
-//                listener.onCitiesError(e.getMessage());
+//                listener.onrentalsError(e.getMessage());
             }
         }
     }
 
-    public void handleDeleteCity(final Film editFilm) {
+    public void handleDeleterental(final Film editFilm) {
 
-        Log.i(TAG, "handleDeleteCity");
+        Log.i(TAG, "handleDeleterental");
 
         // Haal het token uit de prefs
         // Film Verplaats het ophalen van het token naar een centraal beschikbare 'utility funtion'
@@ -323,7 +323,7 @@ public class FilmRequest {
 
             try {
 //                JSONObject jsonBody = null;
-//                Log.i(TAG, "handlePostCity - body = " + jsonBody);
+//                Log.i(TAG, "handlePostrental - body = " + jsonBody);
                 JsonObjectRequest jsObjRequest = new JsonObjectRequest(
                         Request.Method.DELETE,
                         Constants.URL_FILMS + "/" + editFilm.getName(),
@@ -342,7 +342,7 @@ public class FilmRequest {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Error - send back to caller
-//                                listener.onCitiesError(error.toString());
+//                                listener.onrentalsError(error.toString());
                                 SharedPreferences sharedPref = context.getSharedPreferences(
                                         context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
@@ -368,7 +368,7 @@ public class FilmRequest {
                 VolleyRequestQueue.getInstance(context).addToRequestQueue(jsObjRequest);
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
-//                listener.onCitiesError(e.getMessage());
+//                listener.onrentalsError(e.getMessage());
             }
         }
     }
@@ -376,16 +376,16 @@ public class FilmRequest {
     public void handlePostUser(String username, String password) {
 
         Log.i(TAG, "handlePostUser");
-                    //
-            // Maak een JSON object met username en password. Dit object sturen we mee
-            // als request body (zoals je ook met Postman hebt gedaan)
-            //
-            String body = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}";
+        //
+        // Maak een JSON object met username en password. Dit object sturen we mee
+        // als request body (zoals je ook met Postman hebt gedaan)
+        //
+        String body = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}";
 
-            try {
-                JSONObject jsonBody = new JSONObject(body);
-                Log.i(TAG, "handlePostUser - body = " + jsonBody);
-                JsonObjectRequest jsObjRequest = new JsonObjectRequest(
+        try {
+            JSONObject jsonBody = new JSONObject(body);
+            Log.i(TAG, "handlePostUser - body = " + jsonBody);
+            JsonObjectRequest jsObjRequest = new JsonObjectRequest(
                     Request.Method.POST,
                     Constants.URL_REGISTER,
                     jsonBody,
@@ -424,24 +424,26 @@ public class FilmRequest {
             VolleyRequestQueue.getInstance(context).addToRequestQueue(jsObjRequest);
         } catch (JSONException e) {
             Log.e(TAG, e.getMessage());
-//                listener.onCitiesError(e.getMessage());
+//                listener.onrentalsError(e.getMessage());
         }
     }
 
     //
     // Callback interface - implemented by the calling class (MainActivity in our case).
     //
-    public interface CityListener {
-        // Callback function to return a fresh list of Cities
-        void onCitiesAvailable(ArrayList<Film> cities);
+    public interface rentalListener {
+        // Callback function to return a fresh list of rentals
+        void onrentalsAvailable(ArrayList<Film> rentals);
 
         // Callback function to handle a single added Film.
-        void onCityAvailable(Film film);
+        void onrentalAvailable(Film film);
 
         // Callback to handle serverside API errors
-        void onCitiesError(String message);
+        void onrentalsError(String message);
     }
 }
+
+
 
 
 

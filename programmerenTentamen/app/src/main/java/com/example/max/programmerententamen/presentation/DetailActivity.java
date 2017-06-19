@@ -27,17 +27,17 @@ public class DetailActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_detailed);
 //        if(tokenAvailable()){
 //
-//            et_oName = (EditText) findViewById(R.id.activity_city_det_et_oName);
-//            et_oCountryCode = (EditText) findViewById(R.id.activity_city_det_et_oCountryCode);
-//            et_oDistrict = (EditText) findViewById(R.id.activity_city_det_et_oDistrict);
-//            et_oPopulation = (EditText) findViewById(R.id.activity_city_det_et_oPopulation);
+//            et_oName = (EditText) findViewById(R.id.activity_rental_det_et_oName);
+//            et_oCountryCode = (EditText) findViewById(R.id.activity_rental_det_et_oCountryCode);
+//            et_oDistrict = (EditText) findViewById(R.id.activity_rental_det_et_oDistrict);
+//            et_oPopulation = (EditText) findViewById(R.id.activity_rental_det_et_oPopulation);
 //
-//            et_name = (EditText) findViewById(R.id.activity_city_det_editText_name);
-//            et_countryCode = (EditText) findViewById(R.id.activity_city_det_editText_countryCode);
-//            et_district = (EditText) findViewById(R.id.activity_city_det_editText_district);
-//            et_population = (EditText) findViewById(R.id.activity_city_det_editText_population);
+//            et_name = (EditText) findViewById(R.id.activity_rental_det_editText_name);
+//            et_countryCode = (EditText) findViewById(R.id.activity_rental_det_editText_countryCode);
+//            et_district = (EditText) findViewById(R.id.activity_rental_det_editText_district);
+//            et_population = (EditText) findViewById(R.id.activity_rental_det_editText_population);
 //
-//            editBtn = (Button) findViewById(R.id.activity_city_det_btn_editCity);
+//            editBtn = (Button) findViewById(R.id.activity_rental_det_btn_editrental);
 //            editBtn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
 //                        if (!et_oName.getText().toString().equals("") && !et_oCountryCode.getText().toString().equals("") && !et_oDistrict.getText().toString().equals("") && Integer.parseInt(et_oPopulation.getText().toString()) > 0) {
 //                            film.setName(et_oName.getText().toString());
 //
-//                            editCity(film);
+//                            editrental(film);
 ////                            Intent in = new Intent(getApplicationContext(), MainActivity.class);
 ////                            startActivity(in);
 //                        }
@@ -55,22 +55,22 @@ public class DetailActivity extends AppCompatActivity {
 //                }
 //            });
 //
-//            deleteBtn = (Button) findViewById(R.id.activity_city_det_btn_deleteCity);
+//            deleteBtn = (Button) findViewById(R.id.activity_rental_det_btn_deleterental);
 //            deleteBtn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
-//                    deleteCity(film);
+//                    deleterental(film);
 //                }
 //            });
 //
-//            addBtn = (Button) findViewById(R.id.activity_city_det_btn_newCity);
+//            addBtn = (Button) findViewById(R.id.activity_rental_det_btn_newrental);
 //            addBtn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
 //                    try {
 //                        if (!et_name.getText().toString().equals("") && !et_countryCode.getText().toString().equals("") && !et_district.getText().toString().equals("") && Integer.parseInt(et_population.getText().toString()) > 0) {
 //                            Film newFilm = new Film(et_name.getText().toString());
-//                            postCity(newFilm);
+//                            postrental(newFilm);
 //                        }
 //                    } catch (Exception e){
 //                        Log.e(TAG, e.toString());
@@ -78,7 +78,7 @@ public class DetailActivity extends AppCompatActivity {
 //                }
 //            });
 //
-//            backBtn = (Button) findViewById(R.id.activity_city_det_btn_back);
+//            backBtn = (Button) findViewById(R.id.activity_rental_det_btn_back);
 //            backBtn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -112,19 +112,18 @@ public class DetailActivity extends AppCompatActivity {
 //        return result;
 //    }
 //
-//    private void editCity(Film film){
+//    private void editrental(Film film){
 //        FilmRequest request = new FilmRequest(getApplicationContext());
-//        request.handleEditCity(film);
+//        request.handleEditrental(film);
 //    }
 //
-//    private void deleteCity(Film film){
+//    private void deleterental(Film film){
 //        FilmRequest request = new FilmRequest(getApplicationContext());
-//        request.handleDeleteCity(film);
+//        request.handleDeleterental(film);
 //    }
 //
-//    private void postCity(Film film){
+//    private void postrental(Film film){
 //        FilmRequest request = new FilmRequest(getApplicationContext());
-//        request.handlePostCity(film);
+//        request.handlePostrental(film);
 //    }
-
 }

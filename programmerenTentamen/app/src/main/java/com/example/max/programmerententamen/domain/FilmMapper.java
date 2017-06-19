@@ -10,25 +10,25 @@ import java.util.ArrayList;
 
 public class FilmMapper {
 
-    public static final String CITY_ID = "ID";
-    public static final String CITY_NAME = "title";
-    public static final String CITY_COUNTRYCODE = "CountryCode";
-    public static final String CITY_DISTRICT = "District";
-    public static final String CITY_POPULATION = "Population";
+    public static final String rental_ID = "ID";
+    public static final String rental_NAME = "title";
+    public static final String rental_COUNTRYCODE = "CountryCode";
+    public static final String rental_DISTRICT = "District";
+    public static final String rental_POPULATION = "Population";
 
-    public static ArrayList<Film> cityList(JSONArray response){
+    public static ArrayList<Film> rentalList(JSONArray response){
 
         ArrayList<Film> result = new ArrayList<>();
 
         try{
-//            JSONArray jsonArray = response.getJSONArray(CITY_RESULT);
+//            JSONArray jsonArray = response.getJSONArray(rental_RESULT);
 
             for(int i = 0; i < response.length(); i++){
                 JSONObject jsonObject = response.getJSONObject(i);
 
                 Film film = new Film(
-//                        jsonObject.getInt(CITY_ID),
-                        jsonObject.getString(CITY_NAME)
+//                        jsonObject.getInt(rental_ID),
+                        jsonObject.getString(rental_NAME)
 
                 );
                 result.add(film);
