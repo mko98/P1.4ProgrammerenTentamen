@@ -17,6 +17,10 @@ public class Film implements Serializable {
         this.filmID = filmID;
     }
 
+    public Film(String name){
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
