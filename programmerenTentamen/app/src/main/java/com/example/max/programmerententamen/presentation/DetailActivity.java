@@ -18,7 +18,7 @@ import com.example.max.programmerententamen.service.FilmRequest;
 public class DetailActivity extends AppCompatActivity {
 
     public final String TAG = this.getClass().getSimpleName();
-    private TextView et_name, et_id;
+    private TextView et_name;
     private Film film;
 
     @Override
@@ -29,13 +29,11 @@ public class DetailActivity extends AppCompatActivity {
 
 
             et_name = (TextView) findViewById(R.id.filmTitleTextView);
-            et_id = (TextView) findViewById(R.id.filmIDTextView);
+
 
             Bundle extras = getIntent().getExtras();
             film = (Film) extras.getSerializable("Film");
             et_name.setText(film.getName());
-//            et_id.setText(film.getFilmID());
-
 
         } else {
             Intent login = new Intent(getApplicationContext(), LoginActivity.class);
